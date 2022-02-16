@@ -9,31 +9,30 @@ class Product extends Model {}
 // set up fields and rules for Product model
 Product.init(
   {
-    product_id: {
+    id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
-      type: DataTypes.STRING
-    },
-    brand: {
-      type: DataTypes.STRING
-    },
-    manufacture: {
-      type: DataTypes.STRING
-    },
-    isbn: {
-      type: DataTypes.STRING
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     price: { 
-      type: DataTypes.DECIMAL
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      // validate decimal
     },
-    SKU: { //bar code (scan), individual type
-      type: DataTypes.STRING
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 10,
+      // validate numeric
     },
-    weight: {
-      type: DataTypes.DECIMAL
+    category_id: {
+      type: DataTypes.INTEGER,
+      // reference category model's id
     }
   },
   {
