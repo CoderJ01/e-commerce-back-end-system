@@ -20,6 +20,8 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
+  // res.send('ABC'); // router works
+  // return;
   Tag.findOne({
     attributes: { exclude: ['passwords'] },
     where: {
@@ -87,7 +89,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
-  Category.destroy({
+  Tag.destroy({
     where: {
       id: req.params.id
     }
