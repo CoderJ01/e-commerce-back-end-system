@@ -17,7 +17,7 @@ This back end system is designed to allow an e-commerce business to be competiti
  * npm install express
 
 ## Video Link
-<!-- [Insert] -->
+<!-- [Walkthrough]() -->
 
 ## Contribution
 Made by CoderJ01
